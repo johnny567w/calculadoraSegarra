@@ -1,1 +1,389 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(245, 245, 245); 
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: url('./assets/img/fondo1.jpg'); 
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 100px 0px 0px 300px; 
+   position: relative; 
+    z-index: 1; 
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: auto;
+    display: inline-block;
+}
+
+.navbar a {
+    cursor: pointer;
+}
+
+.menu .navbar ul li {
+    position: relative; 
+    float: left; 
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 30px; 
+    color: rgb(209, 222, 233);
+    display: block;
+    font-weight: 700;
+}
+
+
+.menu label {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .header {
+        background-size: contain;
+        min-height: 60vh;
+    }
+
+    .header-txt {
+        width: 80%; /* Aumenta el ancho en pantallas pequeñas */
+    }
+
+    .menu {
+        justify-content: space-around; /* Centra los elementos del menú en pantallas pequeñas */
+    }
+
+    .menu .navbar ul {
+        flex-direction: column; /* Apila los elementos en columna en lugar de fila */
+        gap: 10px; /* Menor espacio entre los ítems */
+    }
+
+    .menu label {
+        margin-left: 0; /* Centra el ícono del menú en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        background-size: contain;
+        background-position: center;
+        min-height: 50vh;
+    }
+
+    .header-txt {
+        width: 90%; /* Aumenta el ancho en pantallas aún más pequeñas */
+    }
+}
+/* Menu label */
+.menu label {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: auto; /* Alinea el ícono del menú a la derecha */
+}
+
+/* Header text */
+.header-txt {
+    width: 200%; /* Aumenta el ancho para mayor flexibilidad */
+    padding: 20px;
+    text-align: center; 
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+.header-txt h1 {
+    color: aliceblue; 
+    font-size: 45px;
+    line-height: 1;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+span {
+    color: rgb(66, 122, 122);
+}
+
+p {
+    font-size: 17px;
+    color: rgb(181, 179, 140);
+    margin-bottom: 35px;
+    text-align: center; /* Centra el texto */
+}
+
+/* Button */
+.btn-1 {
+    display: inline-block;
+    padding: 13px 35px;
+    background-color: rgb(115, 201, 201);
+    color: rgb(42, 95, 160);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 auto; /* Centra el botón */
+    text-align: center;
+}
+
+/* About section */
+.about {
+    padding: 150px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    flex-direction: row; /* Asegura que los elementos se alineen en fila */
+}
+
+.about-img {
+    width: 120px;
+    height: 270px;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.about-txt {
+    text-align: center;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.about-txt h2 {
+    font-size: 40px;
+    line-height: 1;
+    color: #34929e;
+    margin-bottom: 25px;
+}
+
+.about-txt p {
+    color: rgb(199, 197, 158);
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center;
+    }
+    
+    .about-img {
+        justify-content: center;
+        margin-bottom: 20px; /* Añade espacio debajo de la imagen */
+    }
+}
+
+.information {
+    padding: 70px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+/* Information section */
+.information h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Centra el título */
+}
+
+.information p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center; /* Centra los párrafos */
+}
+
+.information ol {
+    padding-left: 20px;
+    margin: 20px 0;
+    text-align: left; /* Alinea a la izquierda los elementos de la lista */
+    color: white;
+}
+
+.information ol li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+/* Button */
+.btn-1 {
+    background-color: #34929e;
+    color: #fff;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    margin: 0 auto; /* Centra el botón */
+    text-align: center;
+}
+
+.btn-1:hover {
+    background-color: #287f86;
+}
+
+/* Estilos para la sección de Contacto */
+.contact {
+    padding: 100px 0;
+    text-align: center; /* Centra el contenido */
+}
+
+form {
+    margin-top: 50px;
+    text-align: center; /* Centra el formulario */
+}
+
+input, textarea {
+    padding: 15px 25px;
+    border: 1px solid aqua;
+    border-radius: 25px;
+    margin-right: 25px;
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    width: calc(100% - 50px); 
+    display: block; /* Hace que los inputs sean bloques y alineables */
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+textarea {
+    height: 150px; 
+    resize: none;
+}
+
+.btn-3 {
+    background-color: #34929e;
+    color: antiquewhite;
+    cursor: pointer;
+    padding: 15px 35px;
+    border-radius: 25px;
+    border: none;
+    text-transform: uppercase;
+    margin: 0 auto; /* Centra el botón */
+    display: block;
+}
+
+#add-course {
+    padding: 100px 20px;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(38, 31, 239, 0.1);
+    text-align: center; /* Centra el contenido */
+}
+
+#add-course form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#add-course input, #add-course textarea {
+    width: calc(100% - 50px);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: block; /* Hace que los inputs sean bloques */
+}
+
+#add-course button {
+    padding: 15px 35px;
+    background-color: #34929e;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 auto;
+    display: block; /* Centra el botón */
+}
+
+#add-course button:hover {
+    background-color: #287f86;
+}
+
+/* Estilos para la sección de Lista de Cursos */
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #173b61;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%; 
+    bottom: 0;
+    flex-shrink: 0; 
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+

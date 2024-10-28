@@ -1,1 +1,26 @@
-<p>operaciones works!</p>
+<main class="gestion-tareas container" id="taskManagement">
+    <h2>Incorporar Nuevas Tareas</h2>
+    <form (ngSubmit)="agregarTarea()" #taskForm="ngForm">
+      <input type="number" [(ngModel)]="nuevaTarea.primero" name="primero" placeholder="Primer numero" required>
+      <input type="number" [(ngModel)]="nuevaTarea.segundo" name="segundo" placeholder="segundo numero" required>
+      <textarea [(ngModel)]="nuevaTarea.descripcion" name="descripcion" placeholder="anotacion extra(puede ser cualquier cosa)" required></textarea>
+      <select [(ngModel)]="nuevaTarea.prioridad" name="prioridad" required>
+        <option [value]="1">Sumar</option>
+        <option [value]="2">Restar</option>
+        <option [value]="3">Multiplicar</option>
+        <option [value]="4">dividir</option>
+      </select>
+      <input type="submit" value="operacion" class="btn-3">
+    </form>
+  
+    <h3>Lista de Tareas Disponibles</h3>
+    <div class="task-list">
+      <div *ngFor="let tarea of tareas" class="task-card">
+        <span> primer numero:</span><strong>{{  tarea.primero }}</strong> <br> <span> segundo numero:</span> {{  tarea.segundo }} <br> <span>operacion a realizar</span> {{ tarea.prioridad }}
+        <button (click)="alternarDescripcion(tarea)">ver operacion</button>
+        <button (click)="eliminarTarea(tarea.id)">Eliminar</button>
+        <p *ngIf="tarea.mostrarDescripcion">{{ tarea.descripcion }}</p>
+      </div>
+    </div>
+  </main>
+  
